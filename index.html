@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>축의금 계산기 | 결혼식 축의금 얼마가 적당할까?</title>
+  <meta name="description" content="결혼식 축의금 금액 계산기. 친밀도, 관계, 식사 여부에 따라 적정 축의금을 계산해드립니다." />
+  <meta name="keywords" content="축의금, 축의금 계산기, 결혼식 축의금, 적정 축의금, 축의금 얼마" />
+  <link rel="canonical" href="https://calc.luckygrampus.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://calc.luckygrampus.com/" />
+  <meta property="og:title" content="축의금 계산기 | 결혼식 축의금 얼마가 적당할까?" />
+  <meta property="og:description" content="결혼식 축의금 금액 계산기. 친밀도, 관계, 식사 여부에 따라 적정 축의금을 계산해드립니다." />
+  <meta property="og:locale" content="ko_KR" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="축의금 계산기 | 결혼식 축의금 얼마가 적당할까?" />
+  <meta name="twitter:description" content="결혼식 축의금 금액 계산기. 친밀도, 관계, 식사 여부에 따라 적정 축의금을 계산해드립니다." />
+
+  <!-- 구글 애드센스 공통 스크립트 -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8518556382646891" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Pretendard:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    nav{background:rgba(13,13,13,0.95);border-bottom:1px solid #2a2a2a;position:sticky;top:0;z-index:100;backdrop-filter:blur(10px)}
+    .nav-inner{max-width:680px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:52px}
+    .nav-logo{font-family:'Noto Serif KR',serif;font-size:16px;font-weight:700;color:#c9a84c;text-decoration:none}
+    .nav-links{display:flex;gap:4px;overflow-x:auto;-ms-overflow-style:none;scrollbar-width:none}
+    .nav-links::-webkit-scrollbar{display:none}
+    .nav-links a{text-decoration:none;color:#8a8580;font-size:12px;padding:5px 10px;border-radius:20px;white-space:nowrap;transition:all 0.2s}
+    .nav-links a:hover,.nav-links a.active{background:rgba(201,168,76,0.12);color:#c9a84c}
+    :root {
+      --bg: #0d0d0d;
+      --surface: #161616;
+      --card: #1e1e1e;
+      --border: #2a2a2a;
+      --gold: #c9a84c;
+      --gold-light: #e8c96d;
+      --gold-dim: #8a6f30;
+      --text: #f0ece4;
+      --text-muted: #8a8580;
+      --text-dim: #555;
+      --accent: #c9a84c;
+      --red: #c0392b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Background texture */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 20% 10%, rgba(201,168,76,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(201,168,76,0.04) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 60px 0 40px;
+      position: relative;
+    }
+
+    .header-ornament {
+      font-size: 28px;
+      margin-bottom: 16px;
+      opacity: 0.8;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    header h1 {
+      font-family: 'Noto Serif KR', serif;
+      font-size: clamp(26px, 5vw, 36px);
+      font-weight: 700;
+      color: var(--gold-light);
+      letter-spacing: -0.5px;
+      line-height: 1.3;
+    }
+
+    header p {
+      margin-top: 12px;
+      color: var(--text-muted);
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: 0.3px;
+    }
+
+    .gold-line {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 20px auto 0;
+    }
+
+    /* AdSense placeholder */
+    .ad-slot {
+      background: var(--surface);
+      border: 1px dashed var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 12px;
+      margin: 24px 0;
+      min-height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Card */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 24px;
+      margin-bottom: 16px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .card:hover::before { opacity: 1; }
+    .card:hover { border-color: #3a3a3a; }
+
+    .card-title {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-title span { font-size: 18px; }
+
+    /* Input label */
+    .field {
+      margin-bottom: 20px;
+    }
+
+    .field:last-child { margin-bottom: 0; }
+
+    label {
+      display: block;
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      font-weight: 400;
+      letter-spacing: 0.2px;
+    }
+
+    /* Toggle buttons */
+    .toggle-group {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .toggle-btn {
+      flex: 1;
+      min-width: 70px;
+      padding: 10px 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text-muted);
+      font-size: 13px;
+      font-family: 'Pretendard', sans-serif;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .toggle-btn:hover {
+      border-color: var(--gold-dim);
+      color: var(--text);
+    }
+
+    .toggle-btn.active {
+      background: rgba(201,168,76,0.12);
+      border-color: var(--gold);
+      color: var(--gold-light);
+      font-weight: 500;
+    }
+
+    /* Slider */
+    .slider-wrap {
+      position: relative;
+    }
+
+    input[type=range] {
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 4px;
+      background: var(--border);
+      border-radius: 4px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 3px solid var(--bg);
+      box-shadow: 0 0 10px rgba(201,168,76,0.4);
+      cursor: pointer;
+      transition: transform 0.1s;
+    }
+
+    input[type=range]::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    .slider-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 8px;
+      font-size: 11px;
+      color: var(--text-dim);
+    }
+
+    /* Result */
+    .result-card {
+      background: linear-gradient(135deg, #1a1600 0%, #1e1a05 50%, #161208 100%);
+      border: 1px solid var(--gold-dim);
+      border-radius: 20px;
+      padding: 36px 28px;
+      text-align: center;
+      margin: 24px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .result-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .result-label {
+      font-size: 12px;
+      color: var(--gold-dim);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .result-amount {
+      font-family: 'Noto Serif KR', serif;
+      font-size: clamp(40px, 10vw, 64px);
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1;
+      margin-bottom: 8px;
+      transition: all 0.3s;
+    }
+
+    .result-amount.changed {
+      animation: pop 0.3s ease;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.95); opacity: 0.7; }
+      60% { transform: scale(1.04); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .result-won {
+      font-size: 20px;
+      color: var(--gold);
+      margin-left: 4px;
+    }
+
+    .result-range {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    .result-tip {
+      margin-top: 20px;
+      padding: 14px 16px;
+      background: rgba(0,0,0,0.3);
+      border-radius: 10px;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      text-align: left;
+      border-left: 2px solid var(--gold-dim);
+    }
+
+    /* Record table */
+    .record-list {
+      list-style: none;
+    }
+
+    .record-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      gap: 12px;
+      animation: slideIn 0.3s ease;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .record-item:last-child { border-bottom: none; }
+
+    .record-name {
+      font-size: 14px;
+      color: var(--text);
+      font-weight: 500;
+      flex: 1;
+    }
+
+    .record-rel {
+      font-size: 11px;
+      color: var(--text-muted);
+      background: var(--surface);
+      padding: 3px 8px;
+      border-radius: 20px;
+    }
+
+    .record-amount {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 15px;
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+
+    .record-del {
+      background: none;
+      border: none;
+      color: var(--text-dim);
+      cursor: pointer;
+      font-size: 16px;
+      padding: 4px;
+      border-radius: 4px;
+      transition: color 0.2s;
+    }
+    .record-del:hover { color: var(--red); }
+
+    .total-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0 0;
+      margin-top: 8px;
+      border-top: 1px solid var(--gold-dim);
+    }
+
+    .total-label {
+      font-size: 13px;
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    .total-amount {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 22px;
+      color: var(--gold-light);
+      font-weight: 700;
+    }
+
+    /* Add form */
+    .add-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .add-row input[type=text] {
+      flex: 1;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 14px;
+      color: var(--text);
+      font-size: 13px;
+      font-family: 'Pretendard', sans-serif;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .add-row input:focus { border-color: var(--gold-dim); }
+    .add-row input::placeholder { color: var(--text-dim); }
+
+    .add-btn {
+      background: var(--gold);
+      border: none;
+      border-radius: 10px;
+      padding: 10px 18px;
+      color: #0d0d0d;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Pretendard', sans-serif;
+      transition: background 0.2s, transform 0.1s;
+      white-space: nowrap;
+    }
+
+    .add-btn:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .add-btn:active { transform: translateY(0); }
+
+    /* Copy button */
+    .copy-btn {
+      width: 100%;
+      padding: 14px;
+      background: transparent;
+      border: 1px solid var(--gold-dim);
+      border-radius: 12px;
+      color: var(--gold);
+      font-size: 14px;
+      font-family: 'Pretendard', sans-serif;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 12px;
+      letter-spacing: 0.3px;
+    }
+
+    .copy-btn:hover {
+      background: rgba(201,168,76,0.08);
+      border-color: var(--gold);
+    }
+
+    /* Empty state */
+    .empty {
+      text-align: center;
+      padding: 32px 0;
+      color: var(--text-dim);
+      font-size: 13px;
+    }
+
+    /* FAQ */
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+    }
+    .faq-item:last-child { border-bottom: none; }
+
+    .faq-q {
+      font-size: 14px;
+      color: var(--text);
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .faq-q::after {
+      content: '+';
+      color: var(--gold);
+      font-size: 18px;
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+
+    .faq-item.open .faq-q::after { transform: rotate(45deg); }
+
+    .faq-a {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.2s;
+    }
+
+    .faq-item.open .faq-a {
+      max-height: 200px;
+      padding-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 0 20px;
+      color: var(--text-dim);
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    /* Mobile */
+    @media (max-width: 480px) {
+      .card { padding: 22px 18px; }
+      .result-card { padding: 28px 20px; }
+      header { padding: 40px 0 30px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">💌 축의금 가이드</a>
+    <div class="nav-links">
+      <a href="index.html" class="active">💍 축의금</a>
+      <a href="condolence.html">🖤 조의금</a>
+      <a href="dol.html">🎂 돌잔치</a>
+      <a href="yongdon.html">🧧 용돈</a>
+      <a href="guide.html">📖 가이드</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- Header -->
+  <header>
+    <div class="header-ornament">💌</div>
+    <h1>결혼식 축의금 계산기</h1>
+    <p>관계와 친밀도에 따라 적정 금액을 알려드려요</p>
+    <div class="gold-line"></div>
+  </header>
+
+  <!-- [1] 광고 상단: web_수평 -->
+  <div class="ad-slot">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8518556382646891"
+         data-ad-slot="8080905265"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- 계산기 카드 -->
+  <div class="card">
+    <div class="card-title"><span>🎎</span> 관계 & 친밀도</div>
+
+    <div class="field">
+      <label>어떤 관계인가요?</label>
+      <div class="toggle-group" id="rel-group">
+        <button class="toggle-btn active" data-val="friend">친구</button>
+        <button class="toggle-btn" data-val="coworker">직장동료</button>
+        <button class="toggle-btn" data-val="relative">친척</button>
+        <button class="toggle-btn" data-val="close">절친/가족</button>
+        <button class="toggle-btn" data-val="boss">상사/거래처</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>친밀도 — <strong id="intimacy-label" style="color:var(--gold)">보통</strong></label>
+      <div class="slider-wrap">
+        <input type="range" id="intimacy" min="1" max="5" value="3" step="1">
+        <div class="slider-labels">
+          <span>별로 안 친함</span>
+          <span>매우 친함</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>식사(밥)를 먹나요?</label>
+      <div class="toggle-group" id="meal-group">
+        <button class="toggle-btn active" data-val="yes">먹어요</button>
+        <button class="toggle-btn" data-val="no">안 먹어요 (봉투만)</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>지역</label>
+      <div class="toggle-group" id="region-group">
+        <button class="toggle-btn active" data-val="metro">수도권</button>
+        <button class="toggle-btn" data-val="local">지방</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 결과 -->
+  <div class="result-card">
+    <div class="result-label">추천 축의금</div>
+    <div class="result-amount" id="result-amount">5<span class="result-won">만원</span></div>
+    <div class="result-range" id="result-range">범위: 3만원 ~ 7만원</div>
+    <div class="result-tip" id="result-tip">💡 친구 관계에서 식사를 하는 경우 5만원이 가장 일반적인 금액이에요.</div>
+  </div>
+
+  <!-- [2] 광고 중간: web_수직 -->
+  <div class="ad-slot">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8518556382646891"
+         data-ad-slot="3083729457"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- 내역 관리 -->
+  <div class="card">
+    <div class="card-title"><span>📋</span> 축의금 내역 관리</div>
+    <p style="font-size:13px; color:var(--text-muted); margin-bottom:16px;">주고받은 축의금을 기록해두세요 (브라우저에 저장)</p>
+
+    <ul class="record-list" id="record-list">
+      <li class="empty" id="empty-msg">아직 기록이 없어요 ✨</li>
+    </ul>
+
+    <div class="total-bar" id="total-bar" style="display:none">
+      <span class="total-label">총 합계</span>
+      <span class="total-amount" id="total-amount">0만원</span>
+    </div>
+
+    <div class="add-row">
+      <input type="text" id="rec-name" placeholder="이름" maxlength="10" style="max-width:120px">
+      <input type="text" id="rec-rel" placeholder="관계 (예: 친구)" maxlength="10">
+      <input type="text" id="rec-amount" placeholder="금액 (만원)" maxlength="5" inputmode="numeric">
+      <button class="add-btn" onclick="addRecord()">추가</button>
+    </div>
+
+    <button class="copy-btn" onclick="copyRecords()">📋 전체 내역 복사</button>
+  </div>
+
+  <!-- FAQ -->
+  <div class="card">
+    <div class="card-title"><span>❓</span> 자주 묻는 질문</div>
+    <div id="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">친구 결혼식 축의금 얼마가 적당한가요?</div>
+        <div class="faq-a">일반적으로 친구 결혼식에서 식사를 하는 경우 5만원, 매우 친한 친구라면 7~10만원이 적당합니다. 식사를 하지 않는 경우 3만원도 무방합니다.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">직장 동료 축의금은 얼마가 좋을까요?</div>
+        <div class="faq-a">직장 동료는 보통 3~5만원이 일반적입니다. 팀 전체가 모아서 내는 경우도 많아요. 친밀한 동료라면 5~7만원을 고려해보세요.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">홀수 금액(3만, 5만)을 내야 하나요?</div>
+        <div class="faq-a">과거에는 홀수를 선호했지만 요즘은 10만원, 20만원 등 짝수도 전혀 문제없습니다. 금액의 의미보다 마음이 중요해요.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">축의금 봉투에 이름을 꼭 써야 하나요?</div>
+        <div class="faq-a">네, 꼭 쓰시는 것이 좋습니다. 신랑/신부 측 구분해서 이름을 적어주시면 나중에 답례품이나 답례 인사를 드릴 때 도움이 됩니다.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">수도권과 지방의 축의금 차이가 있나요?</div>
+        <div class="faq-a">네, 수도권 결혼식은 식대가 더 비싸기 때문에 일반적으로 1~2만원 더 내는 것이 예의라고 여겨집니다. 지방은 동일 관계 기준 약간 낮아도 됩니다.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEO 보강 섹션 -->
+<div class="card" style="line-height: 1.8;">
+  <div class="card-title"><span>📚</span> 2026년 축의금 가이드라인</div>
+  <p style="font-size: 14px; color: var(--text-muted);">
+    결혼식 축의금은 단순한 축하의 의미를 넘어, 최근 <b>치솟는 예식장 식대</b>를 고려한 매너로 자리 잡았습니다. 
+    일반적으로 <b>호텔 예식</b>의 경우 인당 식대가 10~15만 원을 상회하므로, 지인이라면 최소 10만 원, 
+    친한 사이라면 15~20만 원이 적당합니다. <b>지방 예식장</b>이나 식사를 하지 않는 경우 5만 원도 예의에 어긋나지 않으나, 
+    최근 <b>'노쇼'</b>라도 봉투를 전달할 때는 5만 원 이상을 권장하는 추세입니다.
+  </p>
+</div>
+
+<!-- 조의금 연결 배너 섹션 -->
+<div class="card" style="margin-top: 40px; border-style: dashed; border-color: var(--accent); background: rgba(255,255,255,0.02);">
+  <div style="text-align: center; padding: 10px 0;">
+    <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">혹시 슬픈 소식을 들으셨나요?</p>
+    <a href="condolence.html" style="
+      display: inline-block;
+      color: var(--gold-light);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 12px 24px;
+      border: 1px solid var(--gold);
+      border-radius: 30px;
+      transition: 0.3s;
+    " onmouseover="this.style.background='rgba(201, 168, 76, 0.1)'" 
+       onmouseout="this.style.background='transparent'">
+      🖤 조의금 계산기 및 장례 예절 보기 →
+    </a>
+  </div>
+</div>
+
+<!-- SEO 보강 문구 -->
+<div style="margin-top: 30px; font-size: 12px; color: var(--accent); line-height: 1.6; text-align: center;">
+  <p>결혼식 축의금뿐만 아니라 장례식 조의금 기준도 함께 확인하여<br>소중한 분들에게 실례되지 않는 매너를 갖춰보세요.</p>
+</div>
+
+  <!-- [3] 광고 하단: web_멀티플랙스 -->
+  <div class="ad-slot">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-format="autorelaxed"
+         data-ad-client="ca-pub-8518556382646891"
+         data-ad-slot="9202415241"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <footer>
+    © 2026 축의금계산기.kr &nbsp;|&nbsp; 본 계산기는 참고용이며 실제 금액은 상황에 따라 다를 수 있습니다.
+  </footer>
+
+</div>
+
+<script>
+  // State
+  const state = {
+    relation: 'friend',
+    intimacy: 3,
+    meal: 'yes',
+    region: 'metro'
+  };
+
+  // Base amounts (만원)
+  const baseAmount = {
+    friend:   [3, 4, 5, 7, 10],
+    coworker: [3, 3, 5, 5, 7],
+    relative: [5, 5, 7, 10, 15],
+    close:    [5, 7, 10, 15, 20],
+    boss:     [5, 5, 7, 10, 10]
+  };
+
+  const intimacyLabels = ['별로 안 친함', '조금 아는 사이', '보통', '꽤 친한 편', '매우 친함'];
+
+  const tips = {
+    friend:   '친구 관계에서 가장 일반적인 금액이에요. 식사 여부에 따라 조정하세요.',
+    coworker: '직장 동료는 팀 분위기에 맞추는 것도 좋아요. 단체로 모아서 내는 경우도 많아요.',
+    relative: '친척은 가문의 관습이나 부모님과 상의해서 결정하는 것이 좋아요.',
+    close:    '가까운 사이일수록 마음을 담는 게 더 중요해요. 현금 외 선물 추가도 좋아요.',
+    boss:     '상사나 거래처는 회사 문화에 따라 다를 수 있어요. 주변 동료와 맞추는 것을 추천해요.'
+  };
+
+  function calculate() {
+    let base = baseAmount[state.relation][state.intimacy - 1];
+    if (state.meal === 'no') base = Math.max(3, base - 2);
+    if (state.region === 'metro') base = base + 1;
+    if (state.region === 'local') base = Math.max(3, base - 1);
+
+    const lo = Math.max(3, base - 2);
+    const hi = base + 2;
+
+    const standards = [3, 5, 7, 10, 15, 20, 30];
+    const rounded = standards.reduce((a, b) => Math.abs(b - base) < Math.abs(a - base) ? b : a);
+
+    return { main: rounded, lo, hi };
+  }
+
+  function updateResult() {
+    const { main, lo, hi } = calculate();
+    const el = document.getElementById('result-amount');
+    el.innerHTML = `${main}<span class="result-won">만원</span>`;
+    el.classList.remove('changed');
+    void el.offsetWidth;
+    el.classList.add('changed');
+
+    document.getElementById('result-range').textContent = `일반적인 범위: ${lo}만원 ~ ${hi}만원`;
+    document.getElementById('result-tip').textContent = `💡 ${tips[state.relation]}`;
+  }
+
+  // Toggle buttons
+  function setupToggle(groupId, key) {
+    document.getElementById(groupId).querySelectorAll('.toggle-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.getElementById(groupId).querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        state[key] = btn.dataset.val;
+        updateResult();
+      });
+    });
+  }
+
+  setupToggle('rel-group', 'relation');
+  setupToggle('meal-group', 'meal');
+  setupToggle('region-group', 'region');
+
+  // Slider
+  document.getElementById('intimacy').addEventListener('input', function() {
+    state.intimacy = parseInt(this.value);
+    document.getElementById('intimacy-label').textContent = intimacyLabels[state.intimacy - 1];
+    updateResult();
+  });
+
+  // FAQ toggle
+  function toggleFaq(el) {
+    const item = el.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  }
+
+  // Records
+  let records = JSON.parse(localStorage.getItem('chugui_records') || '[]');
+
+  function escapeHtml(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function saveRecords() {
+    localStorage.setItem('chugui_records', JSON.stringify(records));
+  }
+
+  function renderRecords() {
+    const list = document.getElementById('record-list');
+    const empty = document.getElementById('empty-msg');
+    const totalBar = document.getElementById('total-bar');
+
+    if (records.length === 0) {
+      list.innerHTML = '<li class="empty" id="empty-msg">아직 기록이 없어요 ✨</li>';
+      totalBar.style.display = 'none';
+      return;
+    }
+
+    list.innerHTML = records.map((r, i) => `
+      <li class="record-item">
+        <span class="record-name">${escapeHtml(r.name)}</span>
+        <span class="record-rel">${escapeHtml(r.rel)}</span>
+        <span class="record-amount">${r.amount}만원</span>
+        <button class="record-del" onclick="deleteRecord(${i})">✕</button>
+      </li>
+    `).join('');
+
+    const total = records.reduce((sum, r) => sum + parseInt(r.amount), 0);
+    document.getElementById('total-amount').textContent = `${total}만원`;
+    totalBar.style.display = 'flex';
+  }
+
+  function addRecord() {
+    const name = document.getElementById('rec-name').value.trim();
+    const rel = document.getElementById('rec-rel').value.trim();
+    const amount = document.getElementById('rec-amount').value.trim();
+
+    if (!name || !amount || isNaN(amount)) {
+      alert('이름과 금액을 올바르게 입력해주세요.');
+      return;
+    }
+
+    records.unshift({ name, rel: rel || '미입력', amount: parseInt(amount) });
+    saveRecords();
+    renderRecords();
+
+    document.getElementById('rec-name').value = '';
+    document.getElementById('rec-rel').value = '';
+    document.getElementById('rec-amount').value = '';
+  }
+
+  function deleteRecord(i) {
+    if (confirm('삭제할까요?')) {
+      records.splice(i, 1);
+      saveRecords();
+      renderRecords();
+    }
+  }
+
+  function copyRecords() {
+    if (records.length === 0) { alert('기록이 없어요.'); return; }
+    const total = records.reduce((s, r) => s + parseInt(r.amount), 0);
+    const text = records.map(r => `${r.name} (${r.rel}) - ${r.amount}만원`).join('\n') + `\n\n합계: ${total}만원`;
+    navigator.clipboard.writeText(text).then(() => alert('클립보드에 복사됐어요! ✅'));
+  }
+
+  // Init
+  renderRecords();
+  updateResult();
+</script>
+</body>
+</html>

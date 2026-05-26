@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>조의금 계산기 | 2026 장례식 부의금 금액 및 장례 예절 백과사전</title>
+  <meta name="description" content="상황별 적정 조의금 금액을 계산하고, 부의금 봉투 쓰는 법, 장례식 복장, 절하는 법 등 MZ세대가 꼭 알아야 할 장례 예절을 상세히 안내합니다." />
+  <link rel="canonical" href="https://calc.luckygrampus.com/condolence.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://calc.luckygrampus.com/condolence.html" />
+  <meta property="og:title" content="조의금 계산기 | 2026 장례식 부의금 금액 및 장례 예절" />
+  <meta property="og:description" content="상황별 적정 조의금 금액을 계산하고, 부의금 봉투 쓰는 법, 장례식 복장, 절하는 법 등 장례 예절을 안내합니다." />
+  <meta property="og:locale" content="ko_KR" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="조의금 계산기 | 2026 장례식 부의금 금액 및 장례 예절" />
+  <meta name="twitter:description" content="상황별 적정 조의금 금액을 계산하고, 부의금 봉투 쓰는 법, 장례식 복장, 절하는 법 등 장례 예절을 안내합니다." />
+  
+  <!-- 구글 애드센스 공통 스크립트 -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8518556382646891" crossorigin="anonymous"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Pretendard:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0a0a0a; --surface: #121212; --card: #1b1b1b; --border: #2c2c2c;
+      --silver: #b0b0b0; --silver-light: #f0f0f0; --text: #e0e0e0; --text-muted: #888888;
+      --accent: #444444; --white: #ffffff;
+    }
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    body { background: var(--bg); color: var(--text); font-family: 'Pretendard', sans-serif; line-height: 1.8; overflow-x: hidden; }
+    
+    .container { max-width: 720px; margin: 0 auto; padding: 0 24px 100px; }
+    
+    header { text-align: center; padding: 80px 0 50px; position: relative; }
+    header h1 { font-family: 'Noto Serif KR', serif; font-size: 38px; color: var(--silver-light); font-weight: 700; margin-bottom: 15px; letter-spacing: -1px; }
+    header p { color: var(--text-muted); font-size: 15px; letter-spacing: 2px; }
+    header::after { content: ''; display: block; width: 40px; height: 1px; background: var(--silver); margin: 30px auto 0; }
+
+    /* 광고 슬롯 디자인 */
+    .ad-slot { background: transparent; border: 1px dashed #333; margin: 30px 0; border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 100px; }
+
+    /* 카드 및 입력 UI */
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 24px; padding: 32px; margin-bottom: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: transform 0.3s ease; }
+    .card:hover { transform: translateY(-5px); }
+    .card-title { font-family: 'Noto Serif KR', serif; font-size: 20px; color: var(--silver); margin-bottom: 25px; display: flex; align-items: center; gap: 10px; }
+    
+    label { display: block; font-size: 13px; color: var(--text-muted); margin-bottom: 12px; font-weight: 500; }
+    .toggle-group { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 25px; }
+    .toggle-btn { flex: 1; min-width: 120px; padding: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; color: var(--text-muted); cursor: pointer; font-size: 14px; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+    .toggle-btn:hover { border-color: var(--silver); color: var(--text); }
+    .toggle-btn.active { border-color: var(--silver); color: var(--white); background: rgba(255,255,255,0.08); font-weight: 600; box-shadow: 0 0 15px rgba(255,255,255,0.05); }
+
+    /* 결과창 */
+    .result-section { background: linear-gradient(180deg, #151515 0%, #0a0a0a 100%); border: 1px solid var(--accent); border-radius: 30px; padding: 60px 30px; text-align: center; margin: 40px 0; position: relative; }
+    .result-label { font-size: 12px; color: var(--silver); letter-spacing: 3px; margin-bottom: 20px; text-transform: uppercase; }
+    .result-amount { font-family: 'Noto Serif KR', serif; font-size: 64px; font-weight: 700; color: var(--white); text-shadow: 0 0 20px rgba(255,255,255,0.1); }
+    .result-tip { font-size: 15px; color: var(--text-muted); margin-top: 25px; padding: 20px; background: rgba(255,255,255,0.02); border-radius: 15px; line-height: 1.8; text-align: left; }
+
+    /* 콘텐츠 섹션 */
+    .content-area { margin-top: 60px; }
+    .content-area h2 { font-family: 'Noto Serif KR', serif; font-size: 26px; color: var(--silver-light); margin: 50px 0 25px; border-bottom: 1px solid var(--border); padding-bottom: 15px; }
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 600px) { .info-grid { grid-template-columns: 1fr; } }
+    
+    .info-card { background: var(--surface); padding: 25px; border-radius: 18px; border: 1px solid var(--border); }
+    .info-card h4 { color: var(--silver); margin-bottom: 15px; font-size: 17px; }
+    .info-card p, .info-card li { font-size: 14px; color: var(--text-muted); margin-bottom: 8px; list-style-position: inside; }
+
+    .faq-item { margin-bottom: 20px; padding: 20px; background: var(--card); border-radius: 15px; }
+    .faq-q { color: var(--silver-light); font-weight: 600; margin-bottom: 10px; display: block; }
+    .faq-a { color: var(--text-muted); font-size: 14px; }
+
+    footer { text-align: center; padding: 60px 0; border-top: 1px solid var(--border); color: var(--accent); font-size: 12px; }
+    
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .animate { animation: fadeIn 0.8s ease forwards; }
+    nav{background:rgba(10,10,10,0.95);border-bottom:1px solid #2c2c2c;position:sticky;top:0;z-index:100;backdrop-filter:blur(10px)}
+    .nav-inner{max-width:720px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:52px}
+    .nav-logo{font-family:'Noto Serif KR',serif;font-size:16px;font-weight:700;color:#b0b0b0;text-decoration:none}
+    .nav-links{display:flex;gap:4px;overflow-x:auto;-ms-overflow-style:none;scrollbar-width:none}
+    .nav-links::-webkit-scrollbar{display:none}
+    .nav-links a{text-decoration:none;color:#666;font-size:12px;padding:5px 10px;border-radius:20px;white-space:nowrap;transition:all 0.2s}
+    .nav-links a:hover,.nav-links a.active{background:rgba(255,255,255,0.07);color:#b0b0b0}
+    .info-box{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:14px;padding:20px 24px;margin:16px 0}
+    .info-box p{font-size:14px;color:var(--text-muted);margin-bottom:12px;line-height:1.75}
+    .info-box p:last-child{margin-bottom:0}
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">💌 축의금 가이드</a>
+    <div class="nav-links">
+      <a href="index.html">💍 축의금</a>
+      <a href="condolence.html" class="active">🖤 조의금</a>
+      <a href="dol.html">🎂 돌잔치</a>
+      <a href="yongdon.html">🧧 용돈</a>
+      <a href="guide.html">📖 가이드</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <header class="animate">
+    <h1>조의금 계산기</h1>
+    <p>슬픔을 나누는 가장 정중한 방법</p>
+  </header>
+
+  <!-- [1] 광고 상단: web_수평 (8080905265) -->
+  <div class="ad-slot">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8518556382646891"
+         data-ad-slot="8080905265"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <section class="animate" style="animation-delay: 0.2s;">
+    <div class="card">
+      <div class="card-title"><span>🖤</span> 상황 설정</div>
+      <label>상주(혹은 고인)와의 관계</label>
+      <div class="toggle-group" id="rel-group">
+        <button class="toggle-btn active" data-val="5">일반 지인/동료</button>
+        <button class="toggle-btn" data-val="10">친한 친구/직장 상사</button>
+        <button class="toggle-btn" data-val="15">친인척/가까운 친지</button>
+        <button class="toggle-btn" data-val="20">은사님/특별한 인연</button>
+      </div>
+      
+      <label>조문 방식</label>
+      <div class="toggle-group" id="visit-group">
+        <button class="toggle-btn active" data-val="0">직접 빈소 방문</button>
+        <button class="toggle-btn" data-val="-2">불참/봉투만 전달</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- [2] 광고 중간: web_수직 (3083729457) -->
+  <div class="ad-slot">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8518556382646891"
+         data-ad-slot="3083729457"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <div class="result-section animate" style="animation-delay: 0.4s;">
+    <div class="result-label">추천 조의금액</div>
+    <div class="result-amount" id="res-total">5만원</div>
+    <div class="result-tip" id="res-tip">
+      💡 <b>가장 보편적인 금액입니다.</b> 슬픔을 나누는 마음만으로도 충분합니다. 조의금은 전통적으로 홀수(3, 5, 7) 혹은 10만원 단위로 맞추는 것이 예의입니다.
+    </div>
+  </div>
+
+  <div class="content-area animate" style="animation-delay: 0.6s;">
+    <h2>🕯️ 장례식 예절 가이드</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <h4>1. 복장 매너</h4>
+        <ul>
+          <li>검정색 정장이 가장 기본입니다.</li>
+          <li>정장이 없다면 무채색(남색, 진회색) 계열의 단정한 옷을 입습니다.</li>
+          <li><b>양말:</b> 맨발은 절대 금물이며, 반드시 검정색 양말을 착용하세요.</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h4>2. 부의금 봉투 작성</h4>
+        <p>봉투 앞면에는 '부의(賻儀)' 혹은 '근조(謹弔)'라고 적습니다.</p>
+        <p><b>뒷면:</b> 왼쪽 하단에 세로로 이름을 적고, 필요시 소속을 함께 적습니다.</p>
+      </div>
+    </div>
+
+    <h2>🙏 절하는 방법 및 순서</h2>
+    <div class="info-box">
+      <p><b>1. 분향 및 헌화:</b> 향을 피울 때는 입으로 불지 않고 손바닥으로 가볍게 흔들어 끕니다.</p>
+      <p><b>2. 재배(절하기):</b> 남자는 오른손이 위로, 여자는 왼손이 위로 가게 포갠 후 두 번 절합니다.</p>
+      <p><b>3. 상주와 맞절:</b> 영정 앞에 절을 마친 후 상주와 마주 보고 한 번 절(맞절)을 하거나 정중히 고개를 숙여 인사합니다.</p>
+    </div>
+
+    <h2>❓ 자주 묻는 질문 (FAQ)</h2>
+    <div class="faq-item">
+      <span class="faq-q">Q. 조의금 10만원은 짝수인데 괜찮나요?</span>
+      <p class="faq-a">A. 네, 전통적으로 3, 7이 합쳐진 길한 숫자로 보아 10만원은 예외적으로 홀수 취급을 하며 널리 쓰입니다.</p>
+    </div>
+    <div class="faq-item">
+      <span class="faq-q">Q. 기독교나 천주교 장례식은 어떻게 하나요?</span>
+      <p class="faq-a">A. 절 대신 국화꽃을 바치는 헌화와 묵념으로 대신하는 경우가 많습니다. 빈소의 분위기에 맞춰 따르시면 됩니다.</p>
+    </div>
+
+    <!-- [3] 광고 하단: web_멀티플랙스 (9202415241) -->
+    <div class="ad-slot">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-format="autorelaxed"
+           data-ad-client="ca-pub-8518556382646891"
+           data-ad-slot="9202415241"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <div style="text-align: center; margin-top: 50px;">
+      <a href="index.html" style="color: var(--silver); text-decoration: none; font-size: 15px; border: 1px solid var(--border); padding: 15px 30px; border-radius: 40px; display: inline-block;">
+        👈 결혼식 축의금 계산기 바로가기
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 luckygrampus All Rights Reserved.</p>
+    <p style="margin-top: 10px; opacity: 0.5;">본 서비스는 참고용이며 상황에 따라 유연하게 판단하시기 바랍니다.</p>
+  </footer>
+</div>
+
+<script>
+  let relVal = 5, visitVal = 0;
+  function update() {
+    let total = Math.max(3, parseInt(relVal) + parseInt(visitVal));
+    if (total > 10 && total < 15) total = 10;
+    
+    document.getElementById('res-total').innerText = total + "만원";
+    
+    const tips = {
+      3: "마음을 전하기에 충분한 금액입니다.",
+      5: "지인들 사이에서 가장 보편적인 조의금액입니다.",
+      10: "가까운 사이나 직장 동료에게 정중한 표현입니다.",
+      15: "각별한 인연이나 친인척에게 추천하는 금액입니다.",
+      20: "매우 소중한 분을 위한 깊은 애도의 표현입니다."
+    };
+    document.getElementById('res-tip').innerHTML = `💡 <b>${tips[total] || "정성을 담은 금액입니다."}</b> 조의금은 홀수 단위로 맞추는 것이 전통적인 예의입니다.`;
+  }
+
+  document.querySelectorAll('.toggle-btn').forEach(btn => {
+    btn.onclick = () => {
+      btn.parentElement.querySelector('.active').classList.remove('active');
+      btn.classList.add('active');
+      if (btn.parentElement.id === 'rel-group') relVal = btn.dataset.val;
+      else visitVal = btn.dataset.val;
+      update();
+    };
+  });
+</script>
+</body>
+</html>

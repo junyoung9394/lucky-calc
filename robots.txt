@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://calc.luckygrampus.com/sitemap.xml
+Sitemap: https://calc.luckygrampus.com/rss.xml
