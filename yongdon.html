@@ -39,7 +39,16 @@
     header h1{font-family:'Noto Serif KR',serif;font-size:clamp(24px,5vw,34px);font-weight:700;color:var(--gold-light);letter-spacing:-0.5px}
     header p{margin-top:10px;color:var(--text-muted);font-size:14px;font-weight:300}
     .gold-line{width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:18px auto 0}
-    .ad-slot{background:var(--surface);border:1px dashed var(--border);border-radius:8px;margin:24px 0;min-height:90px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .ad-slot{background:var(--surface);border:1px dashed var(--border);border-radius:8px;margin:24px 0;min-height:90px;display:block;overflow:hidden;width:100%}
+    .ad-slot ins{display:block !important;width:100% !important}
+    .ad-bottom-fixed{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#111;border-top:1px solid #2a2a2a;text-align:center;padding:4px 0}
+    .ad-bottom-fixed .close-btn{position:absolute;top:2px;right:8px;background:none;border:none;color:#666;font-size:14px;cursor:pointer;padding:2px 6px}
+    .ad-bottom-fixed .close-btn:hover{color:#aaa}
+    body.has-bottom-ad{padding-bottom:70px}
+    .ad-side{display:none;position:fixed;top:50%;transform:translateY(-50%);width:160px;z-index:100}
+    .ad-side-left{left:calc(50% - 380px - 170px)}
+    .ad-side-right{right:calc(50% - 380px - 170px)}
+    @media(min-width:1200px){.ad-side{display:block}}
     .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px 24px;margin-bottom:16px;position:relative;overflow:hidden;transition:border-color 0.2s}
     .card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold-dim),transparent);opacity:0;transition:opacity 0.3s}
     .card:hover::before{opacity:1}
@@ -81,6 +90,35 @@
   </style>
 </head>
 <body>
+
+<!-- PC 사이드 배너 왼쪽 -->
+<div class="ad-side ad-side-left">
+  <ins class="adsbygoogle"
+       style="display:block;width:160px;height:600px"
+       data-ad-client="ca-pub-8518556382646891"
+       data-ad-slot="3083729457"
+       data-ad-format="auto"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<!-- PC 사이드 배너 오른쪽 -->
+<div class="ad-side ad-side-right">
+  <ins class="adsbygoogle"
+       style="display:block;width:160px;height:600px"
+       data-ad-client="ca-pub-8518556382646891"
+       data-ad-slot="3083729457"
+       data-ad-format="auto"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<!-- 하단 고정 배너 -->
+<div class="ad-bottom-fixed" id="adBottomFixed">
+  <button class="close-btn" onclick="document.getElementById('adBottomFixed').style.display='none';document.body.classList.remove('has-bottom-ad')">✕</button>
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:320px;height:50px"
+       data-ad-client="ca-pub-8518556382646891"
+       data-ad-slot="8080905265"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<script>document.body.classList.add('has-bottom-ad');</script>
 
 <nav>
   <div class="nav-inner">
