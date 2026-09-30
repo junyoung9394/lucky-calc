@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/envelope.html",
+      "destination": "/guide.html#envelope",
+      "permanent": true
+    }
+  ]
+}
